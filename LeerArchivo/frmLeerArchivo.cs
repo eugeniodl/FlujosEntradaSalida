@@ -41,14 +41,22 @@ namespace LeerArchivo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                // crea objeto FileStream para obtener acceso de lectura al archivo
-                entrada = new FileStream(nombreArchivo, FileMode.Open,
-                    FileAccess.Read);
-                // establece el archivo del que se van a leer los datos
-                archivoReader = new StreamReader(entrada);
+                try
+                {
+                    // crea objeto FileStream para obtener acceso de lectura al archivo
+                    entrada = new FileStream(nombreArchivo, FileMode.Open,
+                        FileAccess.Read);
+                    // establece el archivo del que se van a leer los datos
+                    archivoReader = new StreamReader(entrada);
 
-                btnAbrir.Enabled = false; // deshabilita el botón Abrir archivo
-                btnSiguiente.Enabled = true; // habilita el botón Siguiente registro
+                    btnAbrir.Enabled = false; // deshabilita el botón Abrir archivo
+                    btnSiguiente.Enabled = true; // habilita el botón Siguiente registro
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Error al leer el archivo", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
