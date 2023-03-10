@@ -34,9 +34,9 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(46, 255);
+            this.btnAbrir.Location = new System.Drawing.Point(29, 268);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(120, 23);
+            this.btnAbrir.Size = new System.Drawing.Size(128, 23);
             this.btnAbrir.TabIndex = 8;
             this.btnAbrir.Text = "Abrir archivo";
             this.btnAbrir.UseVisualStyleBackColor = true;
@@ -45,7 +45,7 @@
             // btnSiguiente
             // 
             this.btnSiguiente.Enabled = false;
-            this.btnSiguiente.Location = new System.Drawing.Point(290, 255);
+            this.btnSiguiente.Location = new System.Drawing.Point(244, 268);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(128, 23);
             this.btnSiguiente.TabIndex = 9;
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 315);
+            this.ClientSize = new System.Drawing.Size(411, 315);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAbrir);
             this.Name = "frmLeerArchivo";
