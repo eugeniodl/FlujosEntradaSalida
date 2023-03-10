@@ -15,11 +15,12 @@ namespace LeerArchivo
     {
         private FileStream entrada; // mantiene la conexión a un archivo
         private StreamReader archivoReader; // lee datos de un archivo de texto
+
         public frmLeerArchivo()
         {
             InitializeComponent();
         }
-
+        // se invoca cuando el usuario hace clic en el botón Abrir
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             // crea un cuadro de diálogo que permite al usuario abrir el archivo
@@ -30,7 +31,6 @@ namespace LeerArchivo
             // sale del manejador de eventos si el usuario hace clic en Cancelar
             if (resultado == DialogResult.Cancel)
                 return;
-
             nombreArchivo = selectorArchivo.FileName; // obtiene el nombre de archivo especificado
             LimpiarControlesTextBox();
 
@@ -42,7 +42,7 @@ namespace LeerArchivo
             {
                 try
                 {
-                    // crea objeto FileStream para obtener acceso de lectura del archivo
+                    // crea objeto FileStream para obtener acceso de lectura al archivo
                     entrada = new FileStream(nombreArchivo, FileMode.Open, FileAccess.Read);
 
                     // establece el archivo del que se van a leer los datos
@@ -53,11 +53,10 @@ namespace LeerArchivo
                 }
                 catch (IOException)
                 {
-                    MessageBox.Show("Error al abrir el archivo", "Error",
+                    MessageBox.Show("Error al leer el archivo", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -66,14 +65,15 @@ namespace LeerArchivo
             {
                 // obtiene el siguiente registro disponible en el archivo
                 string registroEntrada = archivoReader.ReadLine();
-                string[] camposEntrada; // almacena partes individuales de datos
+                string[] camposEntrada; // almacena piezas individuales de datos
 
                 if (registroEntrada != null)
                 {
                     camposEntrada = registroEntrada.Split(',');
-                    Registro registro = new Registro(
-                        Convert.ToInt32(camposEntrada[0]), camposEntrada[1],
-                        camposEntrada[2], Convert.ToDecimal(camposEntrada[3]));
+
+                    Registro registro = new Registro(Convert.ToInt32(camposEntrada[0]),
+                        camposEntrada[1], camposEntrada[2],
+                        Convert.ToDecimal(camposEntrada[3]));
 
                     // copia los valores del arreglo string a los valores de los controles TextBox
                     EstablecerValoresControlesTextBox(camposEntrada);
@@ -83,18 +83,18 @@ namespace LeerArchivo
                     archivoReader.Close(); // cierra StreamReader
                     entrada.Close(); // cierra FileStream si no hay registros en el archivo
                     btnAbrir.Enabled = true; // habilita el botón Abrir archivo
-                    btnSiguiente.Enabled = false; // deshabilita el botón Siguiente registro
+                    btnSiguiente.Enabled = false; // deshiblita el botón Siguiente registro
                     LimpiarControlesTextBox();
 
-                    // notifica al usuario si no hay más registros en el archivo
+                    // notifica al usuario si no hay registros en el archivo
                     MessageBox.Show("No hay más registros en el archivo", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (IOException)
             {
-                MessageBox.Show("Error al leer el archivo", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al leer del archivo", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

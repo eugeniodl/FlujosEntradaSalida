@@ -14,14 +14,14 @@ namespace BibliotecaBanco
         private decimal saldo;
 
         // el constructor sin parámetros establece los miembros a los valores predeterminados
-        public Registro() : this(0, "", "", 0.0M)
+        public Registro() : this(0,"","",0.0M)
         {
 
         }
 
         // el constructor sobrecargado, establece los miembros a los valores de los parámetros
-        public Registro(int valorCuenta, string valorPrimerNombre, string valorApellidoPaterno,
-            decimal valorSaldo)
+        public Registro(int valorCuenta, string valorPrimerNombre,
+            string valorApellidoPaterno, decimal valorSaldo)
         {
             Cuenta = valorCuenta;
             PrimerNombre = valorPrimerNombre;

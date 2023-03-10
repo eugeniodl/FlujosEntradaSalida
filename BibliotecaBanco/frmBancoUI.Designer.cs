@@ -41,7 +41,7 @@
             // lblCuenta
             // 
             this.lblCuenta.AutoSize = true;
-            this.lblCuenta.Location = new System.Drawing.Point(46, 40);
+            this.lblCuenta.Location = new System.Drawing.Point(27, 33);
             this.lblCuenta.Name = "lblCuenta";
             this.lblCuenta.Size = new System.Drawing.Size(45, 15);
             this.lblCuenta.TabIndex = 0;
@@ -49,15 +49,15 @@
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(162, 37);
+            this.txtCuenta.Location = new System.Drawing.Point(142, 30);
             this.txtCuenta.Name = "txtCuenta";
-            this.txtCuenta.Size = new System.Drawing.Size(256, 23);
+            this.txtCuenta.Size = new System.Drawing.Size(229, 23);
             this.txtCuenta.TabIndex = 1;
             // 
             // lblPrimerNombre
             // 
             this.lblPrimerNombre.AutoSize = true;
-            this.lblPrimerNombre.Location = new System.Drawing.Point(46, 92);
+            this.lblPrimerNombre.Location = new System.Drawing.Point(27, 87);
             this.lblPrimerNombre.Name = "lblPrimerNombre";
             this.lblPrimerNombre.Size = new System.Drawing.Size(87, 15);
             this.lblPrimerNombre.TabIndex = 2;
@@ -65,15 +65,15 @@
             // 
             // txtPrimerNombre
             // 
-            this.txtPrimerNombre.Location = new System.Drawing.Point(163, 89);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(142, 84);
             this.txtPrimerNombre.Name = "txtPrimerNombre";
-            this.txtPrimerNombre.Size = new System.Drawing.Size(256, 23);
+            this.txtPrimerNombre.Size = new System.Drawing.Size(229, 23);
             this.txtPrimerNombre.TabIndex = 3;
             // 
             // lblApellidoPaterno
             // 
             this.lblApellidoPaterno.AutoSize = true;
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(46, 148);
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(27, 148);
             this.lblApellidoPaterno.Name = "lblApellidoPaterno";
             this.lblApellidoPaterno.Size = new System.Drawing.Size(95, 15);
             this.lblApellidoPaterno.TabIndex = 4;
@@ -81,15 +81,15 @@
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(162, 145);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(142, 145);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(257, 23);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(229, 23);
             this.txtApellidoPaterno.TabIndex = 5;
             // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(46, 204);
+            this.lblSaldo.Location = new System.Drawing.Point(27, 208);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(36, 15);
             this.lblSaldo.TabIndex = 6;
@@ -97,16 +97,16 @@
             // 
             // txtSaldo
             // 
-            this.txtSaldo.Location = new System.Drawing.Point(161, 201);
+            this.txtSaldo.Location = new System.Drawing.Point(142, 205);
             this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.Size = new System.Drawing.Size(257, 23);
+            this.txtSaldo.Size = new System.Drawing.Size(229, 23);
             this.txtSaldo.TabIndex = 7;
             // 
             // frmBancoUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 300);
+            this.ClientSize = new System.Drawing.Size(404, 315);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.txtApellidoPaterno);

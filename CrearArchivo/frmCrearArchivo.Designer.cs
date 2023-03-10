@@ -35,9 +35,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(46, 257);
+            this.btnGuardar.Location = new System.Drawing.Point(27, 254);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(118, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(95, 23);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar como";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // btnEntrar
             // 
             this.btnEntrar.Enabled = false;
-            this.btnEntrar.Location = new System.Drawing.Point(183, 257);
+            this.btnEntrar.Location = new System.Drawing.Point(154, 254);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(110, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(98, 23);
             this.btnEntrar.TabIndex = 9;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(317, 257);
+            this.btnSalir.Location = new System.Drawing.Point(282, 254);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(101, 23);
+            this.btnSalir.Size = new System.Drawing.Size(89, 23);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 314);
+            this.ClientSize = new System.Drawing.Size(402, 299);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnGuardar);

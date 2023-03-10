@@ -13,8 +13,7 @@ namespace BibliotecaBanco
     public partial class frmBancoUI : Form
     {
         protected int CuentaTextBox = 4; // número de controles TextBox en el formulario
-
-        // las constantes de la enumeración especifican los índices de los controles TextBox
+        // las constantes en la enumeración especifican los índices de los controles TextBox
         public enum IndicesTextBox
         {
             CUENTA,
@@ -22,7 +21,6 @@ namespace BibliotecaBanco
             APELLIDO,
             SALDO
         }
-
         public frmBancoUI()
         {
             InitializeComponent();
@@ -37,14 +35,13 @@ namespace BibliotecaBanco
                 Control miControl = Controls[i]; // obtiene el control
 
                 // determina si el Control es TextBox
-                if (miControl is TextBox)
+                if(miControl is TextBox)
                 {
-                    // limpia la propiedad Text (la establece a una cadena vacía)
+                    // limpia la propiedad Tex (la establece a una cadena vacía)
                     miControl.Text = "";
                 }
             }
         }
-
         // establece los valores de los controles TextBox con el arreglo string valores
         public void EstablecerValoresControlesTextBox(string[] valores)
         {
@@ -52,10 +49,10 @@ namespace BibliotecaBanco
             if(valores.Length != CuentaTextBox)
             {
                 // lanza excepción si no tiene la longitud correcta
-                throw (new ArgumentException("Debe haber " +
-                    (CuentaTextBox + 1) + " objetos string en el arreglo"));
+                throw new ArgumentException("Debe haber " + (CuentaTextBox + 1)
+                    + " objetos string en el arreglo");
             }
-            // establece valores si el arreglo tiene la longitud correcta
+            // establece al arreglo los valores si el arreglo tiene la longitud correcta
             else
             {
                 txtCuenta.Text = valores[(int)IndicesTextBox.CUENTA];
@@ -64,9 +61,8 @@ namespace BibliotecaBanco
                 txtSaldo.Text = valores[(int)IndicesTextBox.SALDO];
             }
         }
-
         // devuelve los valores de los controles TextBox como un arreglo string
-        public string[] ObtenerValoresControlesTextBox()
+        public string[] ObtenerValoresControlesTexBox()
         {
             string[] valores = new string[CuentaTextBox];
 

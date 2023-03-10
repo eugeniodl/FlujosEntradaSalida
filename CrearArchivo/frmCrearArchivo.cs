@@ -38,7 +38,7 @@ namespace CrearArchivo
             nombreArchivo = selectorArchivo.FileName; // obtiene el nombre del archivo especificado
 
             // muestra error si el usuario especificó un archivo inválido
-            if(nombreArchivo == "" || nombreArchivo == null)
+            if (nombreArchivo == "" || nombreArchivo == null)
                 MessageBox.Show("Nombre de archivo inválido", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
@@ -48,7 +48,8 @@ namespace CrearArchivo
                 try
                 {
                     // abre el archivo con acceso de escritura
-                    salida = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.Write);
+                    salida = new FileStream(nombreArchivo, FileMode.OpenOrCreate,
+                        FileAccess.Write);
 
                     // establece el archivo para escribir los datos
                     archivoWriter = new StreamWriter(salida);
@@ -60,25 +61,23 @@ namespace CrearArchivo
                 // maneja la excepción si hay un problema al abrir el archivo
                 catch (IOException)
                 {
-                    // notifica al usuario si el archivo no existe
+                    // notifica al usuario si el archivo existe
                     MessageBox.Show("Error al abrir el archivo", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
-        // manejador de eventos para el botón Salir
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             // determina si el archivo existe o no
-            if(salida != null)
+            if (salida != null)
             {
                 try
                 {
-                    archivoWriter.Close();
-                    salida.Close();
+                    archivoWriter.Close(); // cierra StreamWriter
+                    salida.Close(); // cierra el archivo
                 }
-                // notifica al usuario del error al cerrar el archivo
                 catch (IOException)
                 {
                     MessageBox.Show("No se puede cerrar el archivo", "Error",
@@ -87,23 +86,26 @@ namespace CrearArchivo
             }
             Application.Exit();
         }
-        // manejador de eventos para el botón Entrar
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             // almacena el arreglo string de valores de los controles TextBox
-            string[] valores = ObtenerValoresControlesTextBox();
+            string[] valores = ObtenerValoresControlesTexBox();
 
             // Registro que contiene los valores de los controles TextBox
             Registro registro = new Registro();
 
             // determina si el campo del control TextBox está vacío
-            if(valores[(int)IndicesTextBox.CUENTA] != "")
+            if (valores[(int)IndicesTextBox.CUENTA] != "")
             {
+                // almacena los valores de los controles TextBox en Registro
+
                 try
                 {
                     // obtiene el valor del número de cuenta del control TextBox
                     int numeroCuenta = int.Parse(valores[(int)IndicesTextBox.CUENTA]);
 
+                    // determina si numeroCuenta es válido
                     if (numeroCuenta > 0)
                     {
                         // almacena los campos TextBox en Registro
@@ -114,8 +116,8 @@ namespace CrearArchivo
 
                         // escribe el Registro al archivo, los campos separados por comas
                         archivoWriter.WriteLine(registro.Cuenta + "," +
-                            registro.PrimerNombre + "," + registro.ApellidoPaterno +
-                            "," + registro.Saldo);
+                            registro.PrimerNombre + "," + registro.ApellidoPaterno + "," +
+                            registro.Saldo);
                     }
                     else
                     {
@@ -127,12 +129,13 @@ namespace CrearArchivo
                 catch (IOException)
                 {
                     MessageBox.Show("Error al escribir en archivo", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch(FormatException)
+                // notifica al usuario si ocurre un error en relación con el formato de los parámetros
+                catch (FormatException)
                 {
                     MessageBox.Show("Formato inválido", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
