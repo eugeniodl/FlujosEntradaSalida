@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EjemploArchivos
+namespace EjemploArchivo
 {
-    public partial class frmEjemploArchivos : Form
+    public partial class frmEjemploArchivo : Form
     {
-        public frmEjemploArchivos()
+        public frmEjemploArchivo()
         {
             InitializeComponent();
         }
+
         // se invoca cuando el usuario oprime una tecla
         private void txtEntrada_KeyDown(object sender, KeyEventArgs e)
         {
@@ -34,6 +35,8 @@ namespace EjemploArchivos
                     // su fecha de modificación, etc.
                     txtSalida.Text = obtenerInformacion(nombreArchivo);
 
+                    // muestra el contenido del archivo a través de StreamReader
+
                     try
                     {
                         StreamReader sr = new StreamReader(nombreArchivo);
@@ -42,46 +45,32 @@ namespace EjemploArchivos
                     // maneja excepción si StreamReader no está disponible
                     catch (IOException)
                     {
-                        MessageBox.Show("Error al leer el archivo",
-                            "Error de archivo", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                        MessageBox.Show("Error al leer del archivo", "Error de archivo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                // determina si nombreArchivo es un directorio
                 else if(Directory.Exists(nombreArchivo))
                 {
                     string[] listaDirectorios; // arreglo para los directorios
 
-                    // obtiene la fecha de creación del archivo,
-                    // su fecha de modificación, etc.
                     txtSalida.Text = obtenerInformacion(nombreArchivo);
 
                     // obtiene la lista de archivos/directorios del directorio especificado
                     listaDirectorios = Directory.GetDirectories(nombreArchivo);
-
-                    txtSalida.Text += "\r\n\nContenido del directorio:\r\n";
-
-                    // imprime en pantalla el contenido de listaDirectorios
-                    for (int i = 0; i < listaDirectorios.Length; i++)
-                    {
-                        txtSalida.Text += listaDirectorios[i] + "\r\n";
-                    }
                 }
                 else
                 {
                     // notifica al usuario que no existe el directorio o archivo
-                    MessageBox.Show(txtEntrada.Text +
+                    MessageBox.Show(txtEntrada.Text + 
                         " no existe", "Error de archivo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
         // obtiene información sobre el archivo o directorio
         private string obtenerInformacion(string nombreArchivo)
         {
             string informacion;
-
             // imprime mensaje indicando que existe el archivo o directorio
             informacion = nombreArchivo + " existe\r\n\r\n";
 
@@ -89,7 +78,7 @@ namespace EjemploArchivos
             informacion += "Creación: " +
                 File.GetCreationTime(nombreArchivo) + "\r\n";
 
-            // imprime en pantalla la fecha y hora de la última modificación del archivo o directorio
+            // imprime en pantalla la fecha de la última modificación del archivo o directorio
             informacion += "Última modificación: " +
                 File.GetLastWriteTime(nombreArchivo) + "\r\n";
 

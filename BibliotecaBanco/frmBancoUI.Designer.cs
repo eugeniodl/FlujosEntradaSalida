@@ -41,7 +41,7 @@
             // lblCuenta
             // 
             this.lblCuenta.AutoSize = true;
-            this.lblCuenta.Location = new System.Drawing.Point(29, 40);
+            this.lblCuenta.Location = new System.Drawing.Point(65, 44);
             this.lblCuenta.Name = "lblCuenta";
             this.lblCuenta.Size = new System.Drawing.Size(45, 15);
             this.lblCuenta.TabIndex = 0;
@@ -49,47 +49,47 @@
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(139, 37);
+            this.txtCuenta.Location = new System.Drawing.Point(180, 41);
             this.txtCuenta.Name = "txtCuenta";
-            this.txtCuenta.Size = new System.Drawing.Size(233, 23);
+            this.txtCuenta.Size = new System.Drawing.Size(255, 23);
             this.txtCuenta.TabIndex = 1;
             // 
             // lblPrimerNombre
             // 
             this.lblPrimerNombre.AutoSize = true;
-            this.lblPrimerNombre.Location = new System.Drawing.Point(29, 100);
+            this.lblPrimerNombre.Location = new System.Drawing.Point(65, 98);
             this.lblPrimerNombre.Name = "lblPrimerNombre";
-            this.lblPrimerNombre.Size = new System.Drawing.Size(87, 15);
+            this.lblPrimerNombre.Size = new System.Drawing.Size(89, 15);
             this.lblPrimerNombre.TabIndex = 2;
-            this.lblPrimerNombre.Text = "Primer nombre";
+            this.lblPrimerNombre.Text = "Primer Nombre";
             // 
             // txtPrimerNombre
             // 
-            this.txtPrimerNombre.Location = new System.Drawing.Point(139, 97);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(180, 95);
             this.txtPrimerNombre.Name = "txtPrimerNombre";
-            this.txtPrimerNombre.Size = new System.Drawing.Size(233, 23);
+            this.txtPrimerNombre.Size = new System.Drawing.Size(255, 23);
             this.txtPrimerNombre.TabIndex = 3;
             // 
             // lblApellidoPaterno
             // 
             this.lblApellidoPaterno.AutoSize = true;
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(29, 160);
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(65, 160);
             this.lblApellidoPaterno.Name = "lblApellidoPaterno";
             this.lblApellidoPaterno.Size = new System.Drawing.Size(95, 15);
             this.lblApellidoPaterno.TabIndex = 4;
-            this.lblApellidoPaterno.Text = "Apellido paterno";
+            this.lblApellidoPaterno.Text = "Apellido Paterno";
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(139, 157);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(180, 157);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(233, 23);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(255, 23);
             this.txtApellidoPaterno.TabIndex = 5;
             // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(29, 232);
+            this.lblSaldo.Location = new System.Drawing.Point(65, 225);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(36, 15);
             this.lblSaldo.TabIndex = 6;
@@ -97,16 +97,16 @@
             // 
             // txtSaldo
             // 
-            this.txtSaldo.Location = new System.Drawing.Point(139, 229);
+            this.txtSaldo.Location = new System.Drawing.Point(180, 222);
             this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.Size = new System.Drawing.Size(233, 23);
+            this.txtSaldo.Size = new System.Drawing.Size(255, 23);
             this.txtSaldo.TabIndex = 7;
             // 
             // frmBancoUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 323);
+            this.ClientSize = new System.Drawing.Size(510, 349);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.txtApellidoPaterno);

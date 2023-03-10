@@ -15,7 +15,6 @@ namespace LeerArchivo
     {
         private FileStream entrada; // mantiene la conexión a un archivo
         private StreamReader archivoReader; // lee datos de un archivo de texto
-
         public frmLeerArchivo()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace LeerArchivo
                 return;
 
             nombreArchivo = selectorArchivo.FileName; // obtiene el nombre de archivo especificado
-            LimpiarControlesTextBox();
+            LimpiaControlesTextBox();
 
             // muestra error si el usuario especifica un archivo inválido
             if (nombreArchivo == "" || nombreArchivo == null)
@@ -44,8 +43,8 @@ namespace LeerArchivo
                 try
                 {
                     // crea objeto FileStream para obtener acceso de lectura al archivo
-                    entrada = new FileStream(nombreArchivo, FileMode.Open,
-                        FileAccess.Read);
+                    entrada = new FileStream(nombreArchivo, FileMode.Open, FileAccess.Read);
+
                     // establece el archivo del que se van a leer los datos
                     archivoReader = new StreamReader(entrada);
 
@@ -71,9 +70,9 @@ namespace LeerArchivo
                 if (registroEntrada != null)
                 {
                     camposEntrada = registroEntrada.Split(',');
+
                     Registro registro = new Registro(Convert.ToInt32(camposEntrada[0]),
-                        camposEntrada[1], camposEntrada[2],
-                        Convert.ToDecimal(camposEntrada[3]));
+                        camposEntrada[1], camposEntrada[2], Convert.ToDecimal(camposEntrada[3]));
 
                     // copia los valores del arreglo string a los valores de los controles TextBox
                     EstablecerValoresControlesTextBox(camposEntrada);
@@ -83,8 +82,8 @@ namespace LeerArchivo
                     archivoReader.Close(); // cierra StreamReader
                     entrada.Close(); // cierra FileStream si no hay registros en el archivo
                     btnAbrir.Enabled = true; // habilita el botón Abrir archivo
-                    btnSiguiente.Enabled = false; // deshabilita el botón Siguiente registro
-                    LimpiarControlesTextBox();
+                    btnSiguiente.Enabled = false; //deshabilita el botón siguiente registro
+                    LimpiaControlesTextBox();
 
                     // notifica al usuario si no hay registros en el archivo
                     MessageBox.Show("No hay más registros en el archivo", "",
@@ -93,9 +92,11 @@ namespace LeerArchivo
             }
             catch (IOException)
             {
+
                 MessageBox.Show("Error al leer del archivo", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }
