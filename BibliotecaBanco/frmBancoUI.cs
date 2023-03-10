@@ -14,7 +14,7 @@ namespace BibliotecaBanco
     {
         protected int CuentaTextBox = 4; // número de controles TextBox en el formulario
 
-        // las constantes de la enumaración especifican los índices de los controles TextBox
+        // las constantes de la enumeración especifican los índices de los controles TextBox
         public enum IndicesTextBox
         {
             CUENTA,
@@ -22,21 +22,22 @@ namespace BibliotecaBanco
             APELLIDO,
             SALDO
         }
+
         public frmBancoUI()
         {
             InitializeComponent();
         }
 
         // limpia todos los controles TextBox
-        public void LimpiaControlesTextBox()
+        public void LimpiarControlesTextBox()
         {
             // itera a través de cada Control en el formulario
             for (int i = 0; i < Controls.Count; i++)
             {
                 Control miControl = Controls[i]; // obtiene el control
 
-                // determina si el control es TextBox
-                if(miControl is TextBox)
+                // determina si el Control es TextBox
+                if (miControl is TextBox)
                 {
                     // limpia la propiedad Text (la establece a una cadena vacía)
                     miControl.Text = "";
@@ -51,12 +52,12 @@ namespace BibliotecaBanco
             if(valores.Length != CuentaTextBox)
             {
                 // lanza excepción si no tiene la longitud correcta
-                throw new ArgumentException("Debe haber " +
-                    (CuentaTextBox + 1) + " objetos string en el arreglo");
+                throw (new ArgumentException("Debe haber " +
+                    (CuentaTextBox + 1) + " objetos string en el arreglo"));
             }
+            // establece valores si el arreglo tiene la longitud correcta
             else
             {
-                // establece valores al arreglo con los valores de los controles TextBox
                 txtCuenta.Text = valores[(int)IndicesTextBox.CUENTA];
                 txtPrimerNombre.Text = valores[(int)IndicesTextBox.NOMBRE];
                 txtApellidoPaterno.Text = valores[(int)IndicesTextBox.APELLIDO];

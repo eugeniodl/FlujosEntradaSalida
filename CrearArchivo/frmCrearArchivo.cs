@@ -15,10 +15,12 @@ namespace CrearArchivo
     {
         private StreamWriter archivoWriter; // escribe datos en el archivo de texto
         private FileStream salida; // mantiene la conexión con el archivo
+
         public frmCrearArchivo()
         {
             InitializeComponent();
         }
+
         // manejador de eventos para el botón Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -36,14 +38,16 @@ namespace CrearArchivo
             nombreArchivo = selectorArchivo.FileName; // obtiene el nombre del archivo especificado
 
             // muestra error si el usuario especificó un archivo inválido
-            if (nombreArchivo == "" || nombreArchivo == null)
+            if(nombreArchivo == "" || nombreArchivo == null)
                 MessageBox.Show("Nombre de archivo inválido", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 // guarda el archivo mediante el objeto FileStream, si el usuario especificó un archivo válido
+
                 try
                 {
+                    // abre el archivo con acceso de escritura
                     salida = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.Write);
 
                     // establece el archivo para escribir los datos
@@ -53,71 +57,17 @@ namespace CrearArchivo
                     btnGuardar.Enabled = false;
                     btnEntrar.Enabled = true;
                 }
+                // maneja la excepción si hay un problema al abrir el archivo
                 catch (IOException)
                 {
                     // notifica al usuario si el archivo no existe
                     MessageBox.Show("Error al abrir el archivo", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
         }
-
-        // manejador de eventos para el botón Entrar
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            // almacena el arreglo string de valores de los controles TextBox
-            string[] valores = ObtenerValoresControlesTextBox();
-
-            // Registro que contiene los valores de los controles TextBox
-            Registro registro = new Registro();
-
-            // determina si el campo del control TextBox está vacío
-            if (valores[(int)IndicesTextBox.CUENTA] != "")
-            {
-                // almacena los valores de los controles TextBox en Registro
-
-                try
-                {
-                    // obtiene el valor del número de cuenta del control TextBox
-                    int numeroCuenta = int.Parse(valores[(int)IndicesTextBox.CUENTA]);
-
-                    // determina si numeroCuenta es válido
-                    if (numeroCuenta > 0)
-                    {
-                        // almacena los campos TextBox en Registro
-                        registro.Cuenta = numeroCuenta;
-                        registro.PrimerNombre = valores[(int)IndicesTextBox.NOMBRE];
-                        registro.ApellidoPaterno = valores[(int)IndicesTextBox.APELLIDO];
-                        registro.Saldo = decimal.Parse(valores[(int)IndicesTextBox.SALDO]);
-
-                        // escribe al archivo el Registro de los campos separados por comas
-                        archivoWriter.WriteLine(registro.Cuenta + "," +
-                            registro.PrimerNombre + "," + registro.ApellidoPaterno + "," +
-                            registro.Saldo);
-                    }
-                    else
-                    {
-                        // notifica al usuario si el número de cuenta es inválido
-                        MessageBox.Show("Número de cuenta inválido", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show("Error al escribir en archivo", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                // notifica al usuario si ocurre un error en relación con el formato de parámetros
-                catch(FormatException)
-                {
-                    MessageBox.Show("Formato inválido", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            LimpiaControlesTextBox(); // limpia los valores de los controles TextBox
-        }
-
+        // manejador de eventos para el botón Salir
         private void btnSalir_Click(object sender, EventArgs e)
         {
             // determina si el archivo existe o no
@@ -135,8 +85,58 @@ namespace CrearArchivo
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
             Application.Exit();
+        }
+        // manejador de eventos para el botón Entrar
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            // almacena el arreglo string de valores de los controles TextBox
+            string[] valores = ObtenerValoresControlesTextBox();
+
+            // Registro que contiene los valores de los controles TextBox
+            Registro registro = new Registro();
+
+            // determina si el campo del control TextBox está vacío
+            if(valores[(int)IndicesTextBox.CUENTA] != "")
+            {
+                try
+                {
+                    // obtiene el valor del número de cuenta del control TextBox
+                    int numeroCuenta = int.Parse(valores[(int)IndicesTextBox.CUENTA]);
+
+                    if (numeroCuenta > 0)
+                    {
+                        // almacena los campos TextBox en Registro
+                        registro.Cuenta = numeroCuenta;
+                        registro.PrimerNombre = valores[(int)IndicesTextBox.NOMBRE];
+                        registro.ApellidoPaterno = valores[(int)IndicesTextBox.APELLIDO];
+                        registro.Saldo = decimal.Parse(valores[(int)IndicesTextBox.SALDO]);
+
+                        // escribe el Registro al archivo, los campos separados por comas
+                        archivoWriter.WriteLine(registro.Cuenta + "," +
+                            registro.PrimerNombre + "," + registro.ApellidoPaterno +
+                            "," + registro.Saldo);
+                    }
+                    else
+                    {
+                        // notifica al usuario si el número de cuenta es inválido
+                        MessageBox.Show("Número de cuenta inválido", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Error al escribir en archivo", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch(FormatException)
+                {
+                    MessageBox.Show("Formato inválido", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            LimpiarControlesTextBox();
         }
     }
 }

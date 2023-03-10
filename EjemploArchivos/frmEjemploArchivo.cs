@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EjemploArchivo
+namespace EjemploArchivos
 {
     public partial class frmEjemploArchivo : Form
     {
@@ -16,7 +16,6 @@ namespace EjemploArchivo
         {
             InitializeComponent();
         }
-
         // se invoca cuando el usuario oprime una tecla
         private void txtEntrada_KeyDown(object sender, KeyEventArgs e)
         {
@@ -35,28 +34,38 @@ namespace EjemploArchivo
                     // su fecha de modificación, etc.
                     txtSalida.Text = obtenerInformacion(nombreArchivo);
 
-                    // muestra el contenido del archivo a través de StreamReader
-
                     try
                     {
+                        // obtiene lector y contenido del archivo
                         StreamReader sr = new StreamReader(nombreArchivo);
                         txtSalida.Text += sr.ReadToEnd();
                     }
                     // maneja excepción si StreamReader no está disponible
                     catch (IOException)
                     {
-                        MessageBox.Show("Error al leer del archivo", "Error de archivo",
+                        MessageBox.Show("Error al leer el archivo", "Error de archivo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else if(Directory.Exists(nombreArchivo))
+                // determina si nombreArchivo es un directorio
+                else if (Directory.Exists(nombreArchivo))
                 {
                     string[] listaDirectorios; // arreglo para los directorios
 
+                    // obtiene la fecha de creación del archivo,
+                    // su fecha de modificación, etc.
                     txtSalida.Text = obtenerInformacion(nombreArchivo);
 
-                    // obtiene la lista de archivos/directorios del directorio especificado
+                    // obtiene la lista de archivos/directorios del directorio espacificado
                     listaDirectorios = Directory.GetDirectories(nombreArchivo);
+
+                    txtSalida.Text += "\r\n\r\nContenido del directorio:\r\n";
+
+                    // imprime en pantallael contenido de listaDirectorios
+                    for (int i = 0; i < listaDirectorios.Length; i++)
+                    {
+                        txtSalida.Text += listaDirectorios[i] + "\r\n";
+                    }
                 }
                 else
                 {
@@ -67,10 +76,12 @@ namespace EjemploArchivo
                 }
             }
         }
+
         // obtiene información sobre el archivo o directorio
         private string obtenerInformacion(string nombreArchivo)
         {
             string informacion;
+
             // imprime mensaje indicando que existe el archivo o directorio
             informacion = nombreArchivo + " existe\r\n\r\n";
 

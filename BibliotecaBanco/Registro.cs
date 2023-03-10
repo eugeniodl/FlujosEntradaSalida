@@ -20,8 +20,8 @@ namespace BibliotecaBanco
         }
 
         // el constructor sobrecargado, establece los miembros a los valores de los parámetros
-        public Registro(int valorCuenta, string valorPrimerNombre,
-            string valorApellidoPaterno, decimal valorSaldo)
+        public Registro(int valorCuenta, string valorPrimerNombre, string valorApellidoPaterno,
+            decimal valorSaldo)
         {
             Cuenta = valorCuenta;
             PrimerNombre = valorPrimerNombre;

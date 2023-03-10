@@ -34,9 +34,9 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(62, 274);
+            this.btnAbrir.Location = new System.Drawing.Point(46, 255);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(129, 23);
+            this.btnAbrir.Size = new System.Drawing.Size(120, 23);
             this.btnAbrir.TabIndex = 8;
             this.btnAbrir.Text = "Abrir archivo";
             this.btnAbrir.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // btnSiguiente
             // 
             this.btnSiguiente.Enabled = false;
-            this.btnSiguiente.Location = new System.Drawing.Point(311, 274);
+            this.btnSiguiente.Location = new System.Drawing.Point(290, 255);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(124, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(128, 23);
             this.btnSiguiente.TabIndex = 9;
             this.btnSiguiente.Text = "Siguiente registro";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -57,11 +57,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 334);
+            this.ClientSize = new System.Drawing.Size(467, 315);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAbrir);
             this.Name = "frmLeerArchivo";
-            this.Text = "frmLeerArchivo";
+            this.Text = "Leer un archivo secuencial";
             this.Controls.SetChildIndex(this.btnAbrir, 0);
             this.Controls.SetChildIndex(this.btnSiguiente, 0);
             this.ResumeLayout(false);

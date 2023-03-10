@@ -1,4 +1,4 @@
-namespace EjemploArchivo
+namespace EjemploArchivos
 {
     internal static class Program
     {
