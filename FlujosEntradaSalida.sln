@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaBanco", "Bibliote
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrearArchivo", "CrearArchivo\CrearArchivo.csproj", "{9890BA0D-4B36-4132-AC8E-A4AEF101814D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeerArchivo", "LeerArchivo\LeerArchivo.csproj", "{28937FD6-9AE1-4133-B015-D61CAB542B9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeerArchivo", "LeerArchivo\LeerArchivo.csproj", "{28937FD6-9AE1-4133-B015-D61CAB542B9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaCredito", "ConsultaCredito\ConsultaCredito.csproj", "{A8984837-C521-4F92-AA1F-D3FDD9F95078}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{28937FD6-9AE1-4133-B015-D61CAB542B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28937FD6-9AE1-4133-B015-D61CAB542B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28937FD6-9AE1-4133-B015-D61CAB542B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8984837-C521-4F92-AA1F-D3FDD9F95078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8984837-C521-4F92-AA1F-D3FDD9F95078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8984837-C521-4F92-AA1F-D3FDD9F95078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8984837-C521-4F92-AA1F-D3FDD9F95078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

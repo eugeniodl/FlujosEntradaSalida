@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 315);
+            this.ClientSize = new System.Drawing.Size(483, 315);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAbrir);
             this.Name = "frmLeerArchivo";
