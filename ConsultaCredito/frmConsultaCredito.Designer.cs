@@ -63,6 +63,7 @@
             this.btnCredito.TabIndex = 2;
             this.btnCredito.Text = "Saldos con crédito";
             this.btnCredito.UseVisualStyleBackColor = true;
+            this.btnCredito.Click += new System.EventHandler(this.obtenerSaldos_Click);
             // 
             // btnDebito
             // 
@@ -73,6 +74,7 @@
             this.btnDebito.TabIndex = 3;
             this.btnDebito.Text = "Saldos con débito";
             this.btnDebito.UseVisualStyleBackColor = true;
+            this.btnDebito.Click += new System.EventHandler(this.obtenerSaldos_Click);
             // 
             // btnCero
             // 
@@ -83,6 +85,7 @@
             this.btnCero.TabIndex = 4;
             this.btnCero.Text = "Saldos en cero";
             this.btnCero.UseVisualStyleBackColor = true;
+            this.btnCero.Click += new System.EventHandler(this.obtenerSaldos_Click);
             // 
             // btnSalir
             // 
