@@ -52,6 +52,7 @@
             this.btnAbrir.TabIndex = 1;
             this.btnAbrir.Text = "Abrir archivo";
             this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnCredito
             // 
@@ -91,6 +92,7 @@
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmConsultaCredito
             // 
