@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrearArchivo", "CrearArchiv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeerArchivo", "LeerArchivo\LeerArchivo.csproj", "{8E743E82-DD0B-437C-ADE7-7E275F6BC727}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaCredito", "ConsultaCredito\ConsultaCredito.csproj", "{A9150297-119F-4626-8D49-6C99567BB0B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultaCredito", "ConsultaCredito\ConsultaCredito.csproj", "{A9150297-119F-4626-8D49-6C99567BB0B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaArchivos", "PruebaArchivos\PruebaArchivos.csproj", "{DF9F868A-2C95-4614-8EBA-1C965C97DAFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaMemoryStream", "PruebaMemoryStream\PruebaMemoryStream.csproj", "{26F5A544-C452-47AB-9378-B6D2D0E9D9AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{A9150297-119F-4626-8D49-6C99567BB0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9150297-119F-4626-8D49-6C99567BB0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9150297-119F-4626-8D49-6C99567BB0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9F868A-2C95-4614-8EBA-1C965C97DAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9F868A-2C95-4614-8EBA-1C965C97DAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9F868A-2C95-4614-8EBA-1C965C97DAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9F868A-2C95-4614-8EBA-1C965C97DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F5A544-C452-47AB-9378-B6D2D0E9D9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F5A544-C452-47AB-9378-B6D2D0E9D9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F5A544-C452-47AB-9378-B6D2D0E9D9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F5A544-C452-47AB-9378-B6D2D0E9D9AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
