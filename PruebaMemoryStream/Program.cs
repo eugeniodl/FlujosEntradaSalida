@@ -1,7 +1,7 @@
 ﻿using(Stream ms = new MemoryStream())
 {
-    using(Stream fs = new FileStream("clientes.txt", FileMode.Open,
-        FileAccess.Read))
+    using(Stream fs = new FileStream("clientes.txt",
+        FileMode.Open, FileAccess.Read))
     {
         fs.CopyTo(ms);
     }
@@ -10,7 +10,7 @@
 
     using(StreamReader sr = new StreamReader(ms))
     {
-        while(!sr.EndOfStream)
+        while (!sr.EndOfStream)
         {
             Console.WriteLine(sr.ReadLine());
         }
@@ -21,7 +21,7 @@
     {
         using(StreamWriter sw = new StreamWriter(fs))
         {
-            sw.WriteLine("200,Maria,Lopez,2000");
+            sw.WriteLine("200,Alicia,Espinoza,14523");
         }
     }
 }
