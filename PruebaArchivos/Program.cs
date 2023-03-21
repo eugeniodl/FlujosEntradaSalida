@@ -1,6 +1,7 @@
-﻿Stream fs = new FileStream("clientes.txt", FileMode.Open, FileAccess.Read);
+﻿Stream fs = new FileStream("clientes.txt",
+    FileMode.Open, FileAccess.Read);
 
-// Obtenemos el número de bytes 
+// Obtenemos el número de bytes
 long cantidad = fs.Length;
 Console.WriteLine($"El archivo tiene una longitud de {cantidad} bytes");
 
@@ -12,7 +13,8 @@ for (long cont = 0; cont < cantidad; cont++)
     Console.WriteLine($"Posición {cont}: {(char)valor}");
 }
 
-Console.WriteLine("------------------------------");
+Console.WriteLine("------------------------");
+
 for (long cont = cantidad; cont > 0; cont--)
 {
     // Establecemos la posición
@@ -23,17 +25,11 @@ for (long cont = cantidad; cont > 0; cont--)
 
 fs.Seek(0, SeekOrigin.Begin);
 
-
 StreamReader sr = new StreamReader(fs);
-
-while(!sr.EndOfStream)
-{
-    Console.WriteLine(sr.ReadLine());
-}
-
 string todo = sr.ReadToEnd();
 Console.WriteLine(todo);
 
-//  MUY IMPORTANTE: Cerrar el Stream
+
+// MUY IMPORTANTE: Cerrar el Stream
 sr.Close();
 fs.Close();
