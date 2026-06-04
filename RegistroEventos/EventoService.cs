@@ -14,7 +14,7 @@
 
     public void RegistrarEvento(string usuario, string descripcion)
     {
-        Evento evento = new(usuario, descripcion);
+        Evento evento = new Evento(usuario, descripcion);
         _repository.Guardar(evento);
     }
 }
