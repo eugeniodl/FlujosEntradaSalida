@@ -25,7 +25,7 @@
     {
         using (StreamWriter escritor = File.AppendText(_rutaArchivo))
         {
-            escritor.WriteLine(escritor.ToString());
+            escritor.WriteLine(evento.ToString());
         }
      }
 }

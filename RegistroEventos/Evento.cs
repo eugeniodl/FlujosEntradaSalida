@@ -4,13 +4,13 @@
     private string? _usuario;
     private string? _descripcion;
 
-    public DateTime FechaHora
+    private DateTime FechaHora
     { get => _fechaHora; set => _fechaHora = value; }
 
     public string? Usuario
     {
         get => _usuario;
-        set
+        private set
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("El usuario es obligatorio.");
@@ -21,7 +21,7 @@
     public string? Descripcion
     {
         get => _descripcion;
-        set
+        private set
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("La descripción es obligatoria.");
