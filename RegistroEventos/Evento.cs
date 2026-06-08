@@ -1,25 +1,27 @@
 ﻿public class Evento
 {
     private DateTime _fechaHora;
-    private string _usuario;
-    private string _descripcion;
+    private string? _usuario;
+    private string? _descripcion;
 
-    public DateTime FechaHora
+    private DateTime FechaHora
     {
         get => _fechaHora;
         set => _fechaHora = value;
     }
 
-    public string Usuario
+    public string? Usuario
     {
         get => _usuario;
-        set => _usuario = ValidarTexto(value, "usuario");
+        private set => _usuario = 
+            ValidarTexto(value, "usuario");
     }
 
-    public string Descripcion
+    public string? Descripcion
     {
         get => _descripcion;
-        set => _descripcion = ValidarTexto(value, "descripcion");
+        private set => _descripcion = 
+            ValidarTexto(value, "descripcion");
     }
 
     public Evento(string usuario, string descripcion)
@@ -31,11 +33,11 @@
 
     public override string ToString()
     {
-        return $"[{FechaHora:dd/MM/yyyy HH:mm:ss}] Usuario: {Usuario}" +
-            $"Evento: {Descripcion}";
+        return $"[{FechaHora:dd/MM/yyyy hh:mm:ss:t}] Usuario: {Usuario}" +
+            $" Evento: {Descripcion}";
     }
 
-    private string ValidarTexto(string value, string campo)
+    private string ValidarTexto(string? value, string campo)
     {
         if (string.IsNullOrWhiteSpace(value))
             throw new ArgumentException($"{campo} obligatorio/a.");
