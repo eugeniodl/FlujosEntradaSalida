@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroEventos", "Registro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBiblioteca", "SistemaBiblioteca\SistemaBiblioteca.csproj", "{FDEB3F5B-DE80-47A5-94E0-1BDA0943F15B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionEstudiantes", "SistemaGestionEstudiantes\SistemaGestionEstudiantes.csproj", "{D9DCCF8C-B590-4BAE-B5C4-1242AA7BC431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FDEB3F5B-DE80-47A5-94E0-1BDA0943F15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDEB3F5B-DE80-47A5-94E0-1BDA0943F15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDEB3F5B-DE80-47A5-94E0-1BDA0943F15B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DCCF8C-B590-4BAE-B5C4-1242AA7BC431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DCCF8C-B590-4BAE-B5C4-1242AA7BC431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DCCF8C-B590-4BAE-B5C4-1242AA7BC431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DCCF8C-B590-4BAE-B5C4-1242AA7BC431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
