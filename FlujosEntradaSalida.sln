@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioSistema", "DiarioSist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroEventos", "RegistroEventos\RegistroEventos.csproj", "{DF95365A-1477-42FD-92AB-E3702688A234}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBiblioteca", "SistemaBiblioteca\SistemaBiblioteca.csproj", "{5A5CFBBE-4361-4CE6-812C-3EC58EB71AE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DF95365A-1477-42FD-92AB-E3702688A234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF95365A-1477-42FD-92AB-E3702688A234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF95365A-1477-42FD-92AB-E3702688A234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5CFBBE-4361-4CE6-812C-3EC58EB71AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5CFBBE-4361-4CE6-812C-3EC58EB71AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5CFBBE-4361-4CE6-812C-3EC58EB71AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5CFBBE-4361-4CE6-812C-3EC58EB71AE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
