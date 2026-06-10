@@ -14,7 +14,7 @@
         if(!File.Exists(_rutaArchivo))
             return eventos;
 
-        using(var lector = File.OpenText(_rutaArchivo))
+        using(StreamReader lector = File.OpenText(_rutaArchivo))
         {
             string? linea;
 
@@ -29,7 +29,7 @@
 
     public void Guardar(Evento evento)
     {
-        using (var escritor = File.AppendText(_rutaArchivo))
+        using (StreamWriter escritor = File.AppendText(_rutaArchivo))
         {
             escritor.WriteLine(evento.ToString());
         }

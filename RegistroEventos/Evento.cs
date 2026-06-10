@@ -4,7 +4,7 @@
     private string? _usuario;
     private string? _descripcion;
 
-    public DateTime FechaHora
+    private DateTime FechaHora
     {
         get => _fechaHora;
         set => _fechaHora = value;
@@ -13,13 +13,15 @@
     public string? Usuario
     {
         get => _usuario;
-        set => _usuario = ValidarTexto(value, "usuario");
+        private set => _usuario =
+            ValidarTexto(value, "usuario");
     }
 
     public string? Descripcion
     {
         get => _descripcion;
-        set => _descripcion = ValidarTexto(value, "descripcion");
+        private set => _descripcion = 
+            ValidarTexto(value, "descripcion");
     }
 
     public Evento(string usuario, string descripcion)
