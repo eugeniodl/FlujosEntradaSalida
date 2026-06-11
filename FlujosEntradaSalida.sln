@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroEventos", "Registro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBiblioteca", "SistemaBiblioteca\SistemaBiblioteca.csproj", "{314D0241-FDCF-4996-8E79-91B383EDF8A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionEstudiantes", "C:\Users\Eugenio\source\repos\FlujosEntradaSalida\SistemaGestionEstudiantes\SistemaGestionEstudiantes.csproj", "{FFE40547-ED32-E844-E22B-A58F7886906E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{314D0241-FDCF-4996-8E79-91B383EDF8A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{314D0241-FDCF-4996-8E79-91B383EDF8A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{314D0241-FDCF-4996-8E79-91B383EDF8A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE40547-ED32-E844-E22B-A58F7886906E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE40547-ED32-E844-E22B-A58F7886906E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE40547-ED32-E844-E22B-A58F7886906E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE40547-ED32-E844-E22B-A58F7886906E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
