@@ -1,5 +1,4 @@
-﻿
-using System.Text.Json;
+﻿using System.Text.Json;
 
 public class EstudianteJsonRepository : IEstudianteRepository
 {

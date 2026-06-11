@@ -39,8 +39,12 @@
         }
     }
 
-    public Estudiante(string carnet, string nombre, 
-        double promedio)
+    public Estudiante()
+    {
+        // Requerido por XmlSerializer
+    }
+
+    public Estudiante(string carnet, string nombre, double promedio)
     {
         Carnet = carnet;
         Nombre = nombre;
