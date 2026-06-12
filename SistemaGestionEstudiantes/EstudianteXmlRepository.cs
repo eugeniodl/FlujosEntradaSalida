@@ -1,15 +1,42 @@
-﻿using System.Text.Json;
+﻿
+using System.Xml.Serialization;
 
-public class EstudianteJsonRepository : IEstudianteRepository
+public class EstudianteXmlRepository : IEstudianteRepository
 {
     private readonly string _archivo;
 
-    public EstudianteJsonRepository(string archivo)
+    public EstudianteXmlRepository(string archivo)
     {
         _archivo = archivo;
 
         if (!File.Exists(_archivo))
-            File.WriteAllText(_archivo, "[]");
+            GuardarArchivo(new List<Estudiante>());
+    }
+
+    private void GuardarArchivo(List<Estudiante> estudiantes)
+    {
+        try
+        {
+            XmlSerializer serializer =
+        new XmlSerializer(typeof(List<Estudiante>));
+            using FileStream fs = new(_archivo, FileMode.Create);
+            serializer.Serialize(fs, estudiantes);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            throw new IOException(
+                "No tiene permisos para escribir el archivo.",
+                ex);
+        }
+    }
+
+    private List<Estudiante> LeerArchivo()
+    {
+        XmlSerializer serializer =
+            new XmlSerializer(typeof(List<Estudiante>));
+        using FileStream fs = new(_archivo, FileMode.Open);
+
+        return (List<Estudiante>)serializer.Deserialize(fs)!;
     }
 
     public void Actualizar(Estudiante estudiante)
@@ -25,25 +52,6 @@ public class EstudianteJsonRepository : IEstudianteRepository
         existente.Promedio = estudiante.Promedio;
 
         GuardarArchivo(estudiantes);
-    }
-
-    private void GuardarArchivo(List<Estudiante> estudiantes)
-    {
-        string json = JsonSerializer.Serialize(
-            estudiantes,
-            new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-        File.WriteAllText(_archivo, json);
-    }
-
-    private List<Estudiante> LeerArchivo()
-    {
-        string json = File.ReadAllText(_archivo);
-
-        return JsonSerializer.Deserialize<List<Estudiante>>(json)
-            ?? new List<Estudiante>();
     }
 
     public void Agregar(Estudiante estudiante)
@@ -72,9 +80,9 @@ public class EstudianteJsonRepository : IEstudianteRepository
     public Estudiante ObtenerPorCarnet(string carnet)
     {
         return LeerArchivo().
-            FirstOrDefault(e => e.Carnet == carnet)
-            ?? throw new ArgumentException(
-                "Estudiante no encontrado.");
+    FirstOrDefault(e => e.Carnet == carnet)
+    ?? throw new ArgumentException(
+        "Estudiante no encontrado.");
     }
 
     public List<Estudiante> ObtenerTodos()
